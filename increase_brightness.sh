@@ -3,7 +3,7 @@ currentBrightness=$(qdbus local.org_kde_powerdevil /org/kde/Solid/PowerManagemen
 brightnessMax=$(qdbus local.org_kde_powerdevil /org/kde/Solid/PowerManagement/Actions/BrightnessControl brightnessMax)
 change=$1
 if [[ $1 == "" ]]; then
-    change=1
+    change=1 # Customize this value to change brightness step
 fi
 if [[ $(((currentBrightness / 960) + change)) -gt 100 ]]; then
     qdbus local.org_kde_powerdevil /org/kde/Solid/PowerManagement/Actions/BrightnessControl setBrightness "$brightnessMax"

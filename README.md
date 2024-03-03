@@ -4,6 +4,8 @@ This repository contains files that can increase or decrease the screen brightne
 
 # Use This in KDE Plasma's Keyboard Shortcuts
 
+Prerequisites:  
+Install `bc` on your system.  
 Step 1:  
 Go to `System Settings > Shortcuts`  
 Step 2:  
@@ -20,3 +22,5 @@ Click the "Apply" button in the bottom-right corner.
 ## Notes
 
 Don't change the path to the files (changing username's home folder, moving the file or folder to another place) or else you would have to manually update the path to the `decrease_brightness.sh` and `increase_brightness.sh` files.
+
+Want to change the brightness step for the files when you add this in the keyboard shortcuts? Just modify the `brightness.conf` value to any positive number.
