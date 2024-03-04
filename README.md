@@ -23,4 +23,4 @@ Click the "Apply" button in the bottom-right corner.
 
 Don't change the path to the files (changing username's home folder, moving the file or folder to another place) or else you would have to manually update the path to the `decrease_brightness.sh` and `increase_brightness.sh` files.
 
-Want to change the brightness step for the files when you add this in the keyboard shortcuts? Just modify the `brightness.conf` value to any positive number.
+Want to change the brightness step for the files when you add this in the keyboard shortcuts? Just change the number in the `increment.conf` file to a positive number.
