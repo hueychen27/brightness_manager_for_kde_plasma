@@ -24,3 +24,14 @@ Click the "Apply" button in the bottom-right corner.
 Don't change the path to the files (changing username's home folder, moving the file or folder to another place) or else you would have to manually update the path to the `decrease_brightness.sh` and `increase_brightness.sh` files.
 
 Want to change the brightness step for the files when you add this in the keyboard shortcuts? Just change the number in the `increment.conf` file to a positive number.
+
+# Build from source
+
+Prerequistities:  
+Install shc to compile shell to c code.  
+Step 1:  
+Run `cd src` in this directory.  
+Step 2:  
+Run `shc -vrf increase_brightness.sh -o ../build/increase_brightness` to compile the shell script.  
+Step 3:  
+Repeat step 2 but with decrease instead of increase.
