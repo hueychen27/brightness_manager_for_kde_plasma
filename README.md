@@ -30,8 +30,6 @@ Want to change the brightness step for the files when you add this in the keyboa
 Prerequistities:  
 Install shc to compile shell to c code.  
 Step 1:  
-Run `cd src` in this directory.  
+Run `make install` in this directory.
 Step 2:  
-Run `shc -vrf increase_brightness.sh -o ../build/increase_brightness` to compile the shell script.  
-Step 3:  
-Repeat step 2 but with decrease instead of increase.
+Follow instructions in previous sections.
