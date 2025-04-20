@@ -1,17 +1,19 @@
 SRC_DIR = src
-BUILD_DIR = build
 
 FILES = $(wildcard $(SRC_DIR)/*.sh)
 
-all: install
+.PHONY: install uninstall
 
-$(BUILD_DIR)/%: $(SRC_DIR)/%.sh
-	mkdir -p $(BUILD_DIR)
-	ln -f $< $(BUILD_DIR)/$(notdir $<)
-	cd $(BUILD_DIR) && shc -vrf $(notdir $<) -o $(notdir $(basename $<))
-	rm $(BUILD_DIR)/$(notdir $<)
+install:
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Global Shortcuts" --key "decrease_brightness" ""
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Global Shortcuts" --key "increase_brightness" ""
 
-install: $(foreach file,$(FILES),$(BUILD_DIR)/$(notdir $(basename $(file))))
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Custom Shortcuts" --key "decrease_brightness" "CommandURL=$(pwd)/$(SRC_DIR)/decrease_brightness.sh"
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Custom Shortcuts" --key "increase_brightness" "CommandURL=$(pwd)/$(SRC_DIR)/increase_brightness.sh"
 
-clean:
-	rm -rf $(BUILD_DIR)
+uninstall:
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Custom Shortcuts" --key "decrease_brightness" ""
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Custom Shortcuts" --key "increase_brightness" ""
+
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Global Shortcuts" --key "decrease_brightness" "decrease_brightness"
+	kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group "Global Shortcuts" --key "increase_brightness" "increase_brightness"
