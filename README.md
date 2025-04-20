@@ -1,3 +1,5 @@
+# Continuing development on [Codeberg](https://codeberg.org/horsey_guy/brightness_manager_for_kde_plasma), not Github.
+
 # Brightness Manager for KDE Plasma 6
 
 This repository contains files that can increase or decrease the screen brightness by an amount other than the default 5.  
